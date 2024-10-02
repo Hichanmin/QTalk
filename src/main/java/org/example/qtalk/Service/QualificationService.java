@@ -1,7 +1,7 @@
 package org.example.qtalk.Service;
 
 import org.example.qtalk.Entity.QualificationEntity;
-import org.example.qtalk.repository.QualificationRepository;
+import org.example.qtalk.Repository.QualificationRepository;
 import org.springframework.stereotype.Service;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -39,7 +39,7 @@ public class QualificationService {
         String result = null;
         try {
             StringBuilder urlBuilder = new StringBuilder("http://openapi.q-net.or.kr/api/service/rest/InquiryListNationalQualifcationSVC/getList");
-            urlBuilder.append("?" + URLEncoder.encode("serviceKey", "UTF-8") + "=");
+            urlBuilder.append("?" + URLEncoder.encode("serviceKey", "UTF-8") + "=CQMdGgGifAin89aCc5O%2FfudIbdFGTkybqDiAuvKQaDFXH9gU8GEa8581fyrUYhJaUIcS2Mh9d1DxNiWadksqKw%3D%3D");
             URL url = new URL(urlBuilder.toString());
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
@@ -86,5 +86,11 @@ public class QualificationService {
             e.printStackTrace();
         }
         return result;
+    }
+
+    public int getQualificationId(String QualificationName) {
+        QualificationEntity entity = new QualificationEntity();
+        entity = qualificationRepository.findByName(QualificationName);
+        return entity.getId();
     }
 }

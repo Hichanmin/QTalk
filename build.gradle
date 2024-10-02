@@ -36,6 +36,7 @@ dependencies {
     //testImplementation 'org.springframework.security:spring-security-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
     implementation 'com.googlecode.json-simple:json-simple:1.1.1' // json 파싱 dependency
+    implementation 'org.jsoup:jsoup:1.17.2' // 스크래퍼 dependency
 }
 
 tasks.named('test') {

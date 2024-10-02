@@ -22,4 +22,10 @@ public class QualificationController {
     public String saveQualificationList() {
         return qualificationService.saveQualificationInfo();
     }
+
+    // test 용 Controller 이름으로 종목코드 추출
+    @GetMapping("/qualificationId")
+    public int getQualificationId() {
+        return qualificationService.getQualificationId("정보처리기사");
+    }
 }

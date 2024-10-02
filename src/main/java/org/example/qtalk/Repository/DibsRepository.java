@@ -1,4 +1,4 @@
-package org.example.qtalk.repository;
+package org.example.qtalk.Repository;
 
 import org.example.qtalk.Entity.DibsEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
